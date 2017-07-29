@@ -283,7 +283,7 @@ public class AgransTests {
 		long timestamp = 1455849866776L;
 		//long timestamp = NTP.getTime();
 		
-		byte[] arbitraryData = "{'postaфыва':'test'}".getBytes(StandardCharsets.UTF_8);
+		byte[] arbitraryData = "{'postaпїЅпїЅпїЅпїЅ':'test'}".getBytes(StandardCharsets.UTF_8);
 
 		BigDecimal fee = BigDecimal.valueOf(1).setScale(8);
 		
@@ -313,7 +313,7 @@ public class AgransTests {
 		// Reference   YWv9Gyi2xxEyEe6ztrGGuAPhmUD86s7h8CANQAcmsxdeS3pU5BvQKnbeyXjnXXd8HgLaDvYBBz6im3dDYTR817F
 		// timestamp   1455849866776
 		// fee         1.00000000 
-		// Name(new Account("QTz6fSV2VNc2wjwwsw57kwQzgQhmGw5idQ"), "проверкаимени", "Проверка значения")
+		// Name(new Account("QTz6fSV2VNc2wjwwsw57kwQzgQhmGw5idQ"), "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 		 
 		//CREATE EMPTY MEMORY DATABASE
 		DBSet databaseSet = DBSet.createEmptyDatabaseSet();
@@ -334,7 +334,7 @@ public class AgransTests {
 		long timestamp = 1455849866776L;
 		//long timestamp = NTP.getTime();
 		
-		Name name = new Name(new Account(creator.getAddress()), "проверкаимени", "Проверка значения");  
+		Name name = new Name(new Account(creator.getAddress()), "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");  
 		
 		BigDecimal fee = BigDecimal.valueOf(1).setScale(8);
 		
@@ -357,7 +357,7 @@ public class AgransTests {
 		System.out.println( Base58.clean("QSBhY5GnYnVFzRqEYLhPGKQ9JnngZVmLxJ0"));
 		System.out.println( Base58.isExtraSymbols("QSBhY5GnYnVFzRqEYLhPGKQ9JnngZVmLxJ0"));
 		System.out.println( Base58.isExtraSymbols("QSBhY5GnYnVFzRqEYLhPGKQ9JnngZVmLxJ"));
-		System.out.println( Base58.clean("QSBhY5GnYnVFzRqEYsdgfывапLhPGKQ9JnngZVmLxJ0"));
+		System.out.println( Base58.clean("QSBhY5GnYnVFzRqEYsdgfпїЅпїЅпїЅпїЅLhPGKQ9JnngZVmLxJ0"));
 
 		System.out.println("C:\\Users\\baby\\AppData\\Roaming\\Qora\\settings.json".replace("\\", "/"));
 	}
@@ -465,7 +465,7 @@ public class AgransTests {
 		//wallet seed: AsF8sY23poJZro7to4ifXQyMzJQsVGFdDgkQd1uihnrg
 		//address seed: ETWEM8bdV2DQxjaS8p9qn9Q5556htaLXoZPc6Hz4Qo3j
 		
-		String text = "Test message. Rus:Тестовое сообщение.";
+		String text = "Test message. Rus:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.";
 		
 		String signerSeed = "ETWEM8bdV2DQxjaS8p9qn9Q5556htaLXoZPc6Hz4Qo3j";
 		byte[] signerSeedByte = Base58.decode(signerSeed);
@@ -532,7 +532,7 @@ public class AgransTests {
 		
 		assertEquals(Crypto.getInstance().getAddress(recipientPublicKey), "QQQdEJ9xYHkBru1tCg2V7m2jPiHHcrJT4r");
 		
-		String StartMessage = "Test message. Rus:Тестовое сообщение.";
+		String StartMessage = "Test message.";
 		
 		byte[] messageBytes;
 		
