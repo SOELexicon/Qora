@@ -241,10 +241,12 @@ public class Peer extends Thread{
 		//PUT QUEUE INTO MAP SO WE KNOW WE ARE WAITING FOR A RESPONSE
 		BlockingQueue<Message> blockingQueue = new ArrayBlockingQueue<Message>(1);
 		this.messages.put(id, blockingQueue);
-		
-		//WHEN FAILED TO SEND MESSAGE
-		if(!this.sendMessage(message))
+
+		// Try to send message
+		if (!this.sendMessage(message))
 		{
+			LOGGER.info("Failed to send message to peer " + address);
+			this.messages.remove(id);
 			return null;
 		}
 		
@@ -252,12 +254,18 @@ public class Peer extends Thread{
 		{
 			Message response = blockingQueue.poll(Settings.getInstance().getConnectionTimeout(), TimeUnit.MILLISECONDS);
 			this.messages.remove(id);
-			
+
+			if (response == null)
+				LOGGER.info("Timed out while waiting for response from peer " + address);
+
 			return response;
 		} 
 		catch (InterruptedException e)
 		{
-			//NO MESSAGE RECEIVED WITHIN TIME;
+			// Our thread was interrupted - caller can choose whether to retry or not
+			LOGGER.info("Interrupted while waiting for response from peer " + address);
+			this.messages.remove(id);
+
 			return null;
 		}
 	}

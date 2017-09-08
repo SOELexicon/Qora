@@ -560,7 +560,7 @@ public class DeployATTransaction extends Transaction
 	{
 		HashSet<Account> accounts = new HashSet<>();
 		accounts.add(this.creator);
-		accounts.addAll(this.getRecipientAccounts());
+
 		return accounts;
 	}
 
@@ -568,7 +568,7 @@ public class DeployATTransaction extends Transaction
 	public HashSet<Account> getRecipientAccounts()
 	{
 		HashSet<Account> accounts = new HashSet<>();
-		accounts.add(this.getATaccount());
+
 		return accounts;
 	}
 	

@@ -25,6 +25,7 @@ import com.google.common.primitives.Bytes;
 import com.google.common.primitives.Longs;
 
 import database.DBSet;
+import utils.Converter;
 
 public abstract class AT_Controller {
 
@@ -426,7 +427,7 @@ public abstract class AT_Controller {
 				md5 = digest.digest( at.getBytes() );
 				if ( !Arrays.equals( md5 , ats.get( atIdBuffer ) ) )
 				{
-					throw new AT_Exception( "Calculated md5 and recieved md5 are not matching" );
+					throw new AT_Exception("Calculated MD5 " + Converter.toHex(md5) + " and received MD5 " + Converter.toHex(ats.get(atIdBuffer)) + " do not match");
 				}
 				tempAtStates.put( new String(at.getId() , "UTF-8") , state ); 
 			}
