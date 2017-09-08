@@ -1,8 +1,14 @@
+# intellij
+/.idea
+/out
+*.iml
+
+# qora
 /data*
-/Data Files
 /wallet*
-/bin/
-/languages/
-settings.json
+/bin
+/languages
+/target
+settings.jso
 peers.json
-/log.txt*
+log.txt*
