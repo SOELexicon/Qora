@@ -1,11 +1,10 @@
-# Qora [![release](https://img.shields.io/github/release/Qoracoin/Qora.svg)](https://github.com/Qoracoin/Qora/releases)
-Public GIT for the Qora cryptocurrency project.
+# Qora [![release](https://img.shields.io/github/release/QoraFoundation/Qora/all.svg)](https://github.com/QoraFoundation/Qora/releases)
+A community fork of the Qora cryptocurrency project.
 
 * [Website](http://qora.org)
 * [API](http://api.qora.org)
 * [Block Explorer](http://node.qora.tech:9090/index/blockexplorer.html)
 * [Bitcointalk](https://bitcointalk.org/index.php?topic=1358722)
-* [Slack](http://slack.qora.co.in)
 
 ## Running Qora
 Run the program without any options to start the daemon.
